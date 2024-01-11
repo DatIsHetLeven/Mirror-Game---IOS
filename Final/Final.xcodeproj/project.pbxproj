@@ -10,6 +10,7 @@
 		FB8AA1392B4ECFD000753FE2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA1382B4ECFD000753FE2 /* APIManager.swift */; };
 		FB8AA13B2B4EF2BB00753FE2 /* CardSetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA13A2B4EF2BB00753FE2 /* CardSetAPI.swift */; };
 		FB8AA13D2B4EF65A00753FE2 /* CardAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA13C2B4EF65A00753FE2 /* CardAPI.swift */; };
+		FB8AA13F2B4F2FB500753FE2 /* DeckAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA13E2B4F2FB500753FE2 /* DeckAPI.swift */; };
 		FBD5DD3D2B4430A800F3CAB2 /* FinalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5DD3C2B4430A800F3CAB2 /* FinalApp.swift */; };
 		FBD5DD3F2B4430A800F3CAB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5DD3E2B4430A800F3CAB2 /* ContentView.swift */; };
 		FBD5DD412B4430AC00F3CAB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBD5DD402B4430AC00F3CAB2 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		FB8AA1382B4ECFD000753FE2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		FB8AA13A2B4EF2BB00753FE2 /* CardSetAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetAPI.swift; sourceTree = "<group>"; };
 		FB8AA13C2B4EF65A00753FE2 /* CardAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAPI.swift; sourceTree = "<group>"; };
+		FB8AA13E2B4F2FB500753FE2 /* DeckAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckAPI.swift; sourceTree = "<group>"; };
 		FBD5DD392B4430A800F3CAB2 /* Final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Final.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD5DD3C2B4430A800F3CAB2 /* FinalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalApp.swift; sourceTree = "<group>"; };
 		FBD5DD3E2B4430A800F3CAB2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				FB8AA1382B4ECFD000753FE2 /* APIManager.swift */,
 				FB8AA13A2B4EF2BB00753FE2 /* CardSetAPI.swift */,
 				FB8AA13C2B4EF65A00753FE2 /* CardAPI.swift */,
+				FB8AA13E2B4F2FB500753FE2 /* DeckAPI.swift */,
 			);
 			path = "API Services";
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				FB8AA13D2B4EF65A00753FE2 /* CardAPI.swift in Sources */,
 				FBFE819E2B44E4A10051957C /* Thema.swift in Sources */,
 				FBD80CD22B4866D80039EFD9 /* CreateDeck.swift in Sources */,
+				FB8AA13F2B4F2FB500753FE2 /* DeckAPI.swift in Sources */,
 				FBD5DD3D2B4430A800F3CAB2 /* FinalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

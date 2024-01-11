@@ -66,7 +66,7 @@ struct CardSetsView: View {
     }
 
     func loadCardSets() {
-        APIManager.shared.fetchCardSets { result in
+        CardSetAPI.shared.fetchCardSets { result in
             switch result {
             case .success(let sets):
                 self.cardSets = sets
@@ -77,7 +77,7 @@ struct CardSetsView: View {
     }
 
     func deleteCardSet(cardSetId: Int) {
-        APIManager.shared.deleteCardSet(cardSetId: cardSetId) { result in
+        CardSetAPI.shared.deleteCardSet(cardSetId: cardSetId) { result in
             switch result {
             case .success:
                 print("Set succesvol verwijderd")

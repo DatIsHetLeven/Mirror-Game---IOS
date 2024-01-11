@@ -74,7 +74,7 @@ struct CardSetDetailView: View {
     }
 
     func loadCards() {
-        APIManager.shared.fetchCards(forCardSetId: cardSetId) { result in
+        CardSetAPI.shared.fetchCards(forCardSetId: cardSetId) { result in
             switch result {
             case .success(let fetchedCards):
                 self.cards = fetchedCards
