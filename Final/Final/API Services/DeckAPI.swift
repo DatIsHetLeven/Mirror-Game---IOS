@@ -15,11 +15,13 @@ class DeckAPI {
     func createDeck(name: String, description: String, completion: @escaping (Result<Int, Error>) -> Void) {
         guard let url = URL(string: "\(APIManager.baseURL)/cardsets") else {
             completion(.failure(APIError.invalidURL))
+            print("3")
             return
         }
         let deckData = ["name": name, "description": description]
         guard let uploadData = try? JSONEncoder().encode(deckData) else {
             completion(.failure(APIError.encodingError))
+            print("4")
             return
         }
 
@@ -31,6 +33,7 @@ class DeckAPI {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))
+                print("5")
                 return
             }
 
@@ -38,6 +41,7 @@ class DeckAPI {
                   (httpResponse.statusCode == 200 || httpResponse.statusCode == 201),
                   let data = data else {
                 completion(.failure(APIError.serverError))
+                print("6")
                 return
             }
 

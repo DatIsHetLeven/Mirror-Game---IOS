@@ -11,6 +11,10 @@
 		FB8AA13B2B4EF2BB00753FE2 /* CardSetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA13A2B4EF2BB00753FE2 /* CardSetAPI.swift */; };
 		FB8AA13D2B4EF65A00753FE2 /* CardAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA13C2B4EF65A00753FE2 /* CardAPI.swift */; };
 		FB8AA13F2B4F2FB500753FE2 /* DeckAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA13E2B4F2FB500753FE2 /* DeckAPI.swift */; };
+		FBBC45232B507D8B005DB144 /* CreateCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBC45222B507D8B005DB144 /* CreateCardsViewModel.swift */; };
+		FBBC45252B50D490005DB144 /* CardSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBC45242B50D490005DB144 /* CardSetViewModel.swift */; };
+		FBBC45272B50DA1E005DB144 /* CreateDeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBC45262B50DA1E005DB144 /* CreateDeckViewModel.swift */; };
+		FBBC45292B50DF40005DB144 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBC45282B50DF40005DB144 /* ColorExtensions.swift */; };
 		FBD5DD3D2B4430A800F3CAB2 /* FinalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5DD3C2B4430A800F3CAB2 /* FinalApp.swift */; };
 		FBD5DD3F2B4430A800F3CAB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5DD3E2B4430A800F3CAB2 /* ContentView.swift */; };
 		FBD5DD412B4430AC00F3CAB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBD5DD402B4430AC00F3CAB2 /* Assets.xcassets */; };
@@ -49,6 +53,10 @@
 		FB8AA13A2B4EF2BB00753FE2 /* CardSetAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetAPI.swift; sourceTree = "<group>"; };
 		FB8AA13C2B4EF65A00753FE2 /* CardAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAPI.swift; sourceTree = "<group>"; };
 		FB8AA13E2B4F2FB500753FE2 /* DeckAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckAPI.swift; sourceTree = "<group>"; };
+		FBBC45222B507D8B005DB144 /* CreateCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCardsViewModel.swift; sourceTree = "<group>"; };
+		FBBC45242B50D490005DB144 /* CardSetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetViewModel.swift; sourceTree = "<group>"; };
+		FBBC45262B50DA1E005DB144 /* CreateDeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeckViewModel.swift; sourceTree = "<group>"; };
+		FBBC45282B50DF40005DB144 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		FBD5DD392B4430A800F3CAB2 /* Final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Final.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD5DD3C2B4430A800F3CAB2 /* FinalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalApp.swift; sourceTree = "<group>"; };
 		FBD5DD3E2B4430A800F3CAB2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -158,6 +166,16 @@
 			path = Archive;
 			sourceTree = "<group>";
 		};
+		FBBC45212B507CC7005DB144 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				FBBC45222B507D8B005DB144 /* CreateCardsViewModel.swift */,
+				FBBC45242B50D490005DB144 /* CardSetViewModel.swift */,
+				FBBC45262B50DA1E005DB144 /* CreateDeckViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
 		FBD5DD302B4430A800F3CAB2 = {
 			isa = PBXGroup;
 			children = (
@@ -184,9 +202,11 @@
 				FBE9FAA62B44DEA8000430CF /* Info.plist */,
 				FB8E95382B4E2CC50073DBB3 /* API Services */,
 				FBB078312B44C84100E47C75 /* Model */,
+				FBBC45212B507CC7005DB144 /* View Model */,
 				FBB078302B44C82E00E47C75 /* View */,
 				FBD5DD3C2B4430A800F3CAB2 /* FinalApp.swift */,
 				FBD5DD3E2B4430A800F3CAB2 /* ContentView.swift */,
+				FBBC45282B50DF40005DB144 /* ColorExtensions.swift */,
 				FBD5DD402B4430AC00F3CAB2 /* Assets.xcassets */,
 				FBD5DD422B4430AC00F3CAB2 /* Preview Content */,
 			);
@@ -352,15 +372,19 @@
 				FB8AA13B2B4EF2BB00753FE2 /* CardSetAPI.swift in Sources */,
 				FBD5DD3F2B4430A800F3CAB2 /* ContentView.swift in Sources */,
 				FB8AA1392B4ECFD000753FE2 /* APIManager.swift in Sources */,
+				FBBC45232B507D8B005DB144 /* CreateCardsViewModel.swift in Sources */,
 				FBFE81A22B44E52A0051957C /* CardSetDetailView.swift in Sources */,
 				FBFE81A02B44E4B60051957C /* Card.swift in Sources */,
 				FBE9FAA12B44DAEE000430CF /* CardSet.swift in Sources */,
 				FBE9FAA52B44DC6F000430CF /* CardSetsView.swift in Sources */,
 				FB8AA13D2B4EF65A00753FE2 /* CardAPI.swift in Sources */,
 				FBFE819E2B44E4A10051957C /* Thema.swift in Sources */,
+				FBBC45272B50DA1E005DB144 /* CreateDeckViewModel.swift in Sources */,
+				FBBC45252B50D490005DB144 /* CardSetViewModel.swift in Sources */,
 				FBD80CD22B4866D80039EFD9 /* CreateDeck.swift in Sources */,
 				FB8AA13F2B4F2FB500753FE2 /* DeckAPI.swift in Sources */,
 				FBD5DD3D2B4430A800F3CAB2 /* FinalApp.swift in Sources */,
+				FBBC45292B50DF40005DB144 /* ColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
