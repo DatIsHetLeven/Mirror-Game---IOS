@@ -141,6 +141,48 @@ class CardSetAPI {
     
     
     
+    
+    func updateCardSet(cardSetId: Int, name: String, description: String, completion: @escaping (Result<Void, Error>) -> Void) {
+            let endpoint = "\(APIManager.baseURL)/cardsets/\(cardSetId)" // Aangepaste endpoint URL
+            guard let url = URL(string: endpoint) else {
+                completion(.failure(APIError.invalidURL))
+                return
+            }
+            
+            let cardSetData: [String: Any] = [
+                "name": name,
+                "description": description
+            ]
+            
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: cardSetData)
+                
+                var request = URLRequest(url: url)
+                request.httpMethod = "PUT"
+                request.httpBody = jsonData
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                
+                URLSession.shared.dataTask(with: request) { data, response, error in
+                        if let error = error {
+                            completion(.failure(error))
+                            return
+                        }
+                        
+                        if let httpResponse = response as? HTTPURLResponse {
+                            if httpResponse.statusCode == 200 {
+                                completion(.success(()))
+                            } else {
+                                completion(.failure(APIError.serverError)) // Geef een serverError bij een ongeldige statuscode
+                            }
+                        } else {
+                            completion(.failure(APIError.serverError)) // Geef een serverError bij ontbrekende HTTP-response
+                        }
+                    }.resume()
+            } catch {
+                completion(.failure(error))
+            }
+        }
+    
 }
 
 

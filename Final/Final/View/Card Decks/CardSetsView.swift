@@ -2,6 +2,7 @@
 import SwiftUI
 
 struct CardSetsView: View {
+
     @StateObject private var viewModel = CardSetViewModel()
     @ObservedObject private var reloadManager = ReloadManager()
     let spacing: CGFloat = 20
@@ -85,7 +86,7 @@ struct CardView: View {
                 Spacer()
 
                 Button(action: {
-                    showingEditPopup = true
+                    //showingEditPopup = true
                 }) {
                     Image(systemName: "pencil")
                         .foregroundColor(.gray)
@@ -93,7 +94,7 @@ struct CardView: View {
                 .padding(.bottom, 8)
                 .padding(.trailing, 8)
                 .sheet(isPresented: $showingEditPopup) {
-                    EditCardSetView(setid: $setid, isPresented: $showingEditPopup, name: cardSet.name, description: cardSet.description)
+                    //EditCardSetView(setid: $setid, isPresented: $showingEditPopup, name: cardSet.name, description: cardSet.description, viewModel: viewModel)
                 }
 
                 Button(action: {
@@ -128,12 +129,14 @@ struct EditCardSetView: View {
     @Binding var isPresented: Bool
     @State private var name = ""
     @State private var description = ""
+    @ObservedObject var viewModel: CardSetViewModel // Voeg viewModel toe
 
-    init(setid: Binding<Int>, isPresented: Binding<Bool>, name: String, description: String) {
+    init(setid: Binding<Int>, isPresented: Binding<Bool>, name: String, description: String, viewModel: CardSetViewModel) {
         _setid = setid
         _isPresented = isPresented
         _name = State(initialValue: name)
         _description = State(initialValue: description)
+        self.viewModel = viewModel // Initialiseer viewModel
     }
 
     var body: some View {
@@ -155,8 +158,7 @@ struct EditCardSetView: View {
                 Spacer()
 
                 Button("Opslaan") {
-                    // Voer hier de bewerkingsactie uit met de waarden van de invoervelden
-                    // Bijvoorbeeld: viewModel.updateCardSet(cardSetId: setid, name: name, description: description)
+                    viewModel.updateCardSet(cardSetId: setid, name: name, description: description)
                     isPresented = false
                 }
                 .padding()
