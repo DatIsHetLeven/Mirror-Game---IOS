@@ -83,6 +83,7 @@ class CardSetAPI {
     func deleteCardSet(cardSetId: Int, completion: @escaping (Result<Bool, Error>) -> Void) {
         guard let url = URL(string: "\(APIManager.baseURL)/cardsets/\(cardSetId)") else {
             completion(.failure(APIError.invalidURL))
+            print("1")
             return
         }
 
@@ -92,11 +93,13 @@ class CardSetAPI {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))
+                print("2")
                 return
             }
 
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
                 completion(.failure(APIError.serverError))
+                print("3")
                 return
             }
 

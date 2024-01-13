@@ -9,7 +9,7 @@
 import Foundation
 
 struct APIManager {
-    static let baseURL = "http://192.168.2.3:8080"
+    static let baseURL = "http://10.0.114.78:8080"
 }
 
 
