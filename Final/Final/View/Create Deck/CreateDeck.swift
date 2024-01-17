@@ -6,13 +6,11 @@
 
 
 
+//
 //import SwiftUI
 //
 //struct CreateDeck: View {
-//    @State private var deckName: String = ""
-//    @State private var deckDescription: String = ""
-//    @State private var navigateToCreateCards = false
-//    @State private var generatedCardSetId: Int?
+//    @StateObject private var viewModel = CreateDeckViewModel()
 //
 //    var body: some View {
 //        VStack {
@@ -34,43 +32,82 @@
 //
 //            Form {
 //                Section(header: Text("Deck Details")) {
-//                    TextField("Deck Name", text: $deckName)
-//                    TextField("Deck Description", text: $deckDescription)
+//                    TextField("Deck Name", text: $viewModel.deckName)
+//                    TextField("Deck Description", text: $viewModel.deckDescription)
 //                }
 //                Section {
 //                    Button("Volgende") {
-//                        createDeck()
+//                        viewModel.createDeck()
 //                    }
-//                    .disabled(deckName.isEmpty || deckDescription.isEmpty)
+//                    .disabled(viewModel.deckName.isEmpty || viewModel.deckDescription.isEmpty)
 //                }
 //            }
 //            .navigationBarTitle("Create Deck", displayMode: .inline)
 //        }
-//        // Deze navigatie wordt geactiveerd als generatedCardSetId wordt bijgewerkt
-//        NavigationLink(destination: CreateCards(cardSetId: generatedCardSetId ?? 0), isActive: $navigateToCreateCards) {
+////        NavigationLink(destination: CreateCards(cardSetId: viewModel.generatedCardSetId ?? 0), isActive: $viewModel.navigateToCreateCards) {
+////            EmptyView()
+////        }
+//        NavigationLink(destination: CreateCards(cardSetId: viewModel.generatedCardSetId ?? 0, viewModel: viewModel), isActive: $viewModel.navigateToCreateCards) {
 //            EmptyView()
 //        }
+//
 //    }
+//}
 //
+
+
+
+//import SwiftUI
 //
-//    func createDeck() {
-//        DeckAPI.shared.createDeck(name: deckName, description: deckDescription) { result in
-//            switch result {
-//            case .success(let cardSetId):
-//                self.generatedCardSetId = cardSetId
-//                self.navigateToCreateCards = true
-//            case .failure(let error):
-//                print("Fout bij het aanmaken van deck: \(error)")
+//struct CreateDeck: View {
+//    @StateObject private var viewModel = CreateDeckViewModel()
+//    @State private var navigateToCreateCards = false
+//
+//    var body: some View {
+//        VStack {
+//            HStack {
+//                Circle()
+//                    .fill(Color.green)
+//                    .frame(width: 30, height: 30)
+//                    .overlay(Text("1").foregroundColor(.white))
+//                Circle()
+//                    .fill(Color.gray)
+//                    .frame(width: 30, height: 30)
+//                    .overlay(Text("2").foregroundColor(.white))
+//                Circle()
+//                    .fill(Color.gray)
+//                    .frame(width: 30, height: 30)
+//                    .overlay(Text("3").foregroundColor(.white))
 //            }
+//            .padding()
+//
+//            Form {
+//                Section(header: Text("Deck Details")) {
+//                    TextField("Deck Name", text: $viewModel.deckName)
+//                    TextField("Deck Description", text: $viewModel.deckDescription)
+//                }
+//
+//                Section {
+//                    Button("Volgende") {
+//                        viewModel.createDeck()
+//                        navigateToCreateCards = true
+//                    }
+//                    .disabled(viewModel.deckName.isEmpty || viewModel.deckDescription.isEmpty)
+//                    .background(NavigationLink("", destination: CreateCards(cardSetId: viewModel.generatedCardSetId ?? 0, viewModel: viewModel), isActive: $navigateToCreateCards))
+//                }
+//            }
+//            .navigationBarTitle("Create Deck", displayMode: .inline)
 //        }
 //    }
 //}
+
 
 
 import SwiftUI
 
 struct CreateDeck: View {
     @StateObject private var viewModel = CreateDeckViewModel()
+    @State private var isNextViewActive = false
 
     var body: some View {
         VStack {
@@ -78,38 +115,64 @@ struct CreateDeck: View {
                 Circle()
                     .fill(Color.green)
                     .frame(width: 30, height: 30)
-                    .overlay(Text("1"))
+                    .overlay(Text("1").foregroundColor(.white))
+                    .padding()
+                    .background(Circle().fill(Color.blue).frame(width: 40, height: 40))
+                
                 Circle()
                     .fill(Color.gray)
                     .frame(width: 30, height: 30)
-                    .overlay(Text("2"))
+                    .overlay(Text("2").foregroundColor(.white))
+                    .padding()
+                    .background(Circle().fill(Color.blue).frame(width: 40, height: 40))
+                
                 Circle()
                     .fill(Color.gray)
                     .frame(width: 30, height: 30)
-                    .overlay(Text("3"))
+                    .overlay(Text("3").foregroundColor(.white))
+                    .padding()
+                    .background(Circle().fill(Color.blue).frame(width: 40, height: 40))
             }
-            .padding()
-            
+            .padding(.top, 20)
+
             Form {
                 Section(header: Text("Deck Details")) {
                     TextField("Deck Name", text: $viewModel.deckName)
+                        .padding()
+                        .background(RoundedRectangle(cornerRadius: 10).fill(Color(.systemGray5)))
+                    
                     TextField("Deck Description", text: $viewModel.deckDescription)
+                        .padding()
+                        .background(RoundedRectangle(cornerRadius: 10).fill(Color(.systemGray5)))
                 }
+                
                 Section {
-                    Button("Volgende") {
+                    NavigationLink("", destination: CreateCards(cardSetId: viewModel.generatedCardSetId ?? 0, viewModel: viewModel), isActive: $isNextViewActive)
+                        .opacity(0)
+                    
+                    Button(action: {
                         viewModel.createDeck()
+                        isNextViewActive = true
+                    }) {
+                        Text("Volgende")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.blue)
+                            .cornerRadius(10)
                     }
                     .disabled(viewModel.deckName.isEmpty || viewModel.deckDescription.isEmpty)
                 }
             }
+            .listStyle(GroupedListStyle())
             .navigationBarTitle("Create Deck", displayMode: .inline)
         }
-//        NavigationLink(destination: CreateCards(cardSetId: viewModel.generatedCardSetId ?? 0), isActive: $viewModel.navigateToCreateCards) {
-//            EmptyView()
-//        }
-        NavigationLink(destination: CreateCards(cardSetId: viewModel.generatedCardSetId ?? 0, viewModel: viewModel), isActive: $viewModel.navigateToCreateCards) {
-            EmptyView()
+        .onAppear {
+            // Hier kun je de waarde van viewModel.generatedCardSetId instellen op basis van je logica
+            // viewModel.generatedCardSetId = ...
         }
-
+        .padding()
+        .background(Color(.systemBackground).edgesIgnoringSafeArea(.all))
     }
 }
