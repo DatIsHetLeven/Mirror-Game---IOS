@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB5E065C2B5ED27F0071802E /* ArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5E065B2B5ED27F0071802E /* ArchiveView.swift */; };
+		FB5E065E2B5F45980071802E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5E065D2B5F45980071802E /* LoadingView.swift */; };
+		FB685F022B5E008D000E9AAB /* GameDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB685F012B5E008D000E9AAB /* GameDetail.swift */; };
+		FB84E26D2B5DEFE200D2248E /* PlayGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB84E26C2B5DEFE100D2248E /* PlayGame.swift */; };
 		FB8AA1392B4ECFD000753FE2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA1382B4ECFD000753FE2 /* APIManager.swift */; };
 		FB8AA13B2B4EF2BB00753FE2 /* CardSetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA13A2B4EF2BB00753FE2 /* CardSetAPI.swift */; };
 		FB8AA13D2B4EF65A00753FE2 /* CardAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA13C2B4EF65A00753FE2 /* CardAPI.swift */; };
 		FB8AA13F2B4F2FB500753FE2 /* DeckAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA13E2B4F2FB500753FE2 /* DeckAPI.swift */; };
-		FBBC45232B507D8B005DB144 /* CreateCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBC45222B507D8B005DB144 /* CreateCardsViewModel.swift */; };
+		FBBC45232B507D8B005DB144 /* CardSetDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBC45222B507D8B005DB144 /* CardSetDetailViewModel.swift */; };
 		FBBC45252B50D490005DB144 /* CardSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBC45242B50D490005DB144 /* CardSetViewModel.swift */; };
 		FBBC45272B50DA1E005DB144 /* CreateDeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBC45262B50DA1E005DB144 /* CreateDeckViewModel.swift */; };
 		FBBC45292B50DF40005DB144 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBC45282B50DF40005DB144 /* ColorExtensions.swift */; };
@@ -24,6 +28,10 @@
 		FBD5DD5A2B4430AD00F3CAB2 /* FinalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5DD592B4430AD00F3CAB2 /* FinalUITestsLaunchTests.swift */; };
 		FBD80CD22B4866D80039EFD9 /* CreateDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD80CD12B4866D80039EFD9 /* CreateDeck.swift */; };
 		FBD80CD42B4978C20039EFD9 /* CreateCrds.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD80CD32B4978C20039EFD9 /* CreateCrds.swift */; };
+		FBDFDC6A2B5F5F8F005E315B /* AnswerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDFDC692B5F5F8F005E315B /* AnswerData.swift */; };
+		FBDFDC6C2B5F5FCE005E315B /* GameDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDFDC6B2B5F5FCE005E315B /* GameDetailViewModel.swift */; };
+		FBDFDC6E2B5F6092005E315B /* PlayAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDFDC6D2B5F6092005E315B /* PlayAPI.swift */; };
+		FBE296D72B59A9EE00013341 /* UIComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE296D62B59A9EE00013341 /* UIComponents.swift */; };
 		FBE9FAA12B44DAEE000430CF /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE9FAA02B44DAEE000430CF /* CardSet.swift */; };
 		FBE9FAA52B44DC6F000430CF /* CardSetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE9FAA42B44DC6F000430CF /* CardSetsView.swift */; };
 		FBFE819E2B44E4A10051957C /* Thema.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFE819D2B44E4A10051957C /* Thema.swift */; };
@@ -49,11 +57,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB5E065B2B5ED27F0071802E /* ArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveView.swift; sourceTree = "<group>"; };
+		FB5E065D2B5F45980071802E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		FB685F012B5E008D000E9AAB /* GameDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetail.swift; sourceTree = "<group>"; };
+		FB84E26C2B5DEFE100D2248E /* PlayGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGame.swift; sourceTree = "<group>"; };
 		FB8AA1382B4ECFD000753FE2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		FB8AA13A2B4EF2BB00753FE2 /* CardSetAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetAPI.swift; sourceTree = "<group>"; };
 		FB8AA13C2B4EF65A00753FE2 /* CardAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAPI.swift; sourceTree = "<group>"; };
 		FB8AA13E2B4F2FB500753FE2 /* DeckAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckAPI.swift; sourceTree = "<group>"; };
-		FBBC45222B507D8B005DB144 /* CreateCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCardsViewModel.swift; sourceTree = "<group>"; };
+		FBBC45222B507D8B005DB144 /* CardSetDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetDetailViewModel.swift; sourceTree = "<group>"; };
 		FBBC45242B50D490005DB144 /* CardSetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetViewModel.swift; sourceTree = "<group>"; };
 		FBBC45262B50DA1E005DB144 /* CreateDeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeckViewModel.swift; sourceTree = "<group>"; };
 		FBBC45282B50DF40005DB144 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
@@ -69,6 +81,10 @@
 		FBD5DD592B4430AD00F3CAB2 /* FinalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FBD80CD12B4866D80039EFD9 /* CreateDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeck.swift; sourceTree = "<group>"; };
 		FBD80CD32B4978C20039EFD9 /* CreateCrds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCrds.swift; sourceTree = "<group>"; };
+		FBDFDC692B5F5F8F005E315B /* AnswerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerData.swift; sourceTree = "<group>"; };
+		FBDFDC6B2B5F5FCE005E315B /* GameDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewModel.swift; sourceTree = "<group>"; };
+		FBDFDC6D2B5F6092005E315B /* PlayAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayAPI.swift; sourceTree = "<group>"; };
+		FBE296D62B59A9EE00013341 /* UIComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIComponents.swift; sourceTree = "<group>"; };
 		FBE9FAA02B44DAEE000430CF /* CardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSet.swift; sourceTree = "<group>"; };
 		FBE9FAA42B44DC6F000430CF /* CardSetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetsView.swift; sourceTree = "<group>"; };
 		FBE9FAA62B44DEA8000430CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -109,6 +125,7 @@
 				FB8AA13A2B4EF2BB00753FE2 /* CardSetAPI.swift */,
 				FB8AA13C2B4EF65A00753FE2 /* CardAPI.swift */,
 				FB8AA13E2B4F2FB500753FE2 /* DeckAPI.swift */,
+				FBDFDC6D2B5F6092005E315B /* PlayAPI.swift */,
 			);
 			path = "API Services";
 			sourceTree = "<group>";
@@ -130,6 +147,7 @@
 				FBE9FAA02B44DAEE000430CF /* CardSet.swift */,
 				FBFE819D2B44E4A10051957C /* Thema.swift */,
 				FBFE819F2B44E4B60051957C /* Card.swift */,
+				FBDFDC692B5F5F8F005E315B /* AnswerData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -146,6 +164,8 @@
 		FBB078332B44CA6E00E47C75 /* Play Game */ = {
 			isa = PBXGroup;
 			children = (
+				FB84E26C2B5DEFE100D2248E /* PlayGame.swift */,
+				FB685F012B5E008D000E9AAB /* GameDetail.swift */,
 			);
 			path = "Play Game";
 			sourceTree = "<group>";
@@ -162,6 +182,7 @@
 		FBB078352B44CA8A00E47C75 /* Archive */ = {
 			isa = PBXGroup;
 			children = (
+				FB5E065B2B5ED27F0071802E /* ArchiveView.swift */,
 			);
 			path = Archive;
 			sourceTree = "<group>";
@@ -169,9 +190,10 @@
 		FBBC45212B507CC7005DB144 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				FBBC45222B507D8B005DB144 /* CreateCardsViewModel.swift */,
+				FBBC45222B507D8B005DB144 /* CardSetDetailViewModel.swift */,
 				FBBC45242B50D490005DB144 /* CardSetViewModel.swift */,
 				FBBC45262B50DA1E005DB144 /* CreateDeckViewModel.swift */,
+				FBDFDC6B2B5F5FCE005E315B /* GameDetailViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -199,6 +221,7 @@
 		FBD5DD3B2B4430A800F3CAB2 /* Final */ = {
 			isa = PBXGroup;
 			children = (
+				FBE296D52B59A98800013341 /* CustomComponents */,
 				FBE9FAA62B44DEA8000430CF /* Info.plist */,
 				FB8E95382B4E2CC50073DBB3 /* API Services */,
 				FBB078312B44C84100E47C75 /* Model */,
@@ -207,6 +230,7 @@
 				FBD5DD3C2B4430A800F3CAB2 /* FinalApp.swift */,
 				FBD5DD3E2B4430A800F3CAB2 /* ContentView.swift */,
 				FBBC45282B50DF40005DB144 /* ColorExtensions.swift */,
+				FB5E065D2B5F45980071802E /* LoadingView.swift */,
 				FBD5DD402B4430AC00F3CAB2 /* Assets.xcassets */,
 				FBD5DD422B4430AC00F3CAB2 /* Preview Content */,
 			);
@@ -236,6 +260,14 @@
 				FBD5DD592B4430AD00F3CAB2 /* FinalUITestsLaunchTests.swift */,
 			);
 			path = FinalUITests;
+			sourceTree = "<group>";
+		};
+		FBE296D52B59A98800013341 /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FBE296D62B59A9EE00013341 /* UIComponents.swift */,
+			);
+			path = CustomComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,14 +401,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBD80CD42B4978C20039EFD9 /* CreateCrds.swift in Sources */,
+				FBE296D72B59A9EE00013341 /* UIComponents.swift in Sources */,
 				FB8AA13B2B4EF2BB00753FE2 /* CardSetAPI.swift in Sources */,
+				FB5E065E2B5F45980071802E /* LoadingView.swift in Sources */,
 				FBD5DD3F2B4430A800F3CAB2 /* ContentView.swift in Sources */,
+				FB685F022B5E008D000E9AAB /* GameDetail.swift in Sources */,
 				FB8AA1392B4ECFD000753FE2 /* APIManager.swift in Sources */,
-				FBBC45232B507D8B005DB144 /* CreateCardsViewModel.swift in Sources */,
+				FBBC45232B507D8B005DB144 /* CardSetDetailViewModel.swift in Sources */,
+				FB5E065C2B5ED27F0071802E /* ArchiveView.swift in Sources */,
 				FBFE81A22B44E52A0051957C /* CardSetDetailView.swift in Sources */,
 				FBFE81A02B44E4B60051957C /* Card.swift in Sources */,
+				FBDFDC6E2B5F6092005E315B /* PlayAPI.swift in Sources */,
+				FBDFDC6A2B5F5F8F005E315B /* AnswerData.swift in Sources */,
 				FBE9FAA12B44DAEE000430CF /* CardSet.swift in Sources */,
+				FBDFDC6C2B5F5FCE005E315B /* GameDetailViewModel.swift in Sources */,
 				FBE9FAA52B44DC6F000430CF /* CardSetsView.swift in Sources */,
+				FB84E26D2B5DEFE200D2248E /* PlayGame.swift in Sources */,
 				FB8AA13D2B4EF65A00753FE2 /* CardAPI.swift in Sources */,
 				FBFE819E2B44E4A10051957C /* Thema.swift in Sources */,
 				FBBC45272B50DA1E005DB144 /* CreateDeckViewModel.swift in Sources */,
@@ -543,6 +583,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Final/Preview Content\"";
+				DEVELOPMENT_TEAM = F8XC9FW4T8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Final/Info.plist;
@@ -551,6 +592,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -572,6 +614,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Final/Preview Content\"";
+				DEVELOPMENT_TEAM = F8XC9FW4T8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Final/Info.plist;
@@ -580,6 +623,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -90,10 +90,10 @@
 //        return cards.first(where: { $0.theme.id == themeId })?.theme.name ?? "Onbekend thema"
 //    }
 //}
-
-
-
-
+//
+//
+//
+//
 
 
 
@@ -101,16 +101,15 @@ import SwiftUI
 
 struct CardSetDetailView: View {
     var cardSetId: Int
-    @StateObject private var viewModel = CardSetViewModel()
-    let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
-    
+    @StateObject private var viewModel = CardSetDetailViewModel()
+
     var body: some View {
         VStack {
             Text("Card Set Details")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .frame(maxWidth: .infinity, alignment: .center)
-            
+
             ScrollView {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
@@ -124,16 +123,16 @@ struct CardSetDetailView: View {
                                         .foregroundColor(.white)
                                 }
                                 .frame(width: 120, height: 120)
-                                .background(Color.blue)
+                                .background(viewModel.themeColor(for: themeId))
                                 .cornerRadius(10)
                             }
                         }
                     }
                 }
-                
+
                 if let selectedThemeId = viewModel.selectedThemeId {
-                    LazyVGrid(columns: columns, spacing: 20) {
-                        ForEach(Array(viewModel.groupedCards[selectedThemeId]!.enumerated()), id: \.element.id) { index, card in
+                    LazyVGrid(columns: viewModel.columns, spacing: 20) {
+                        ForEach(Array(viewModel.groupedCards[selectedThemeId]?.enumerated() ?? [].enumerated()), id: \.element.id) { index, card in
                             VStack(alignment: .leading) {
                                 HStack {
                                     Text("#\(index + 1)")
@@ -157,8 +156,9 @@ struct CardSetDetailView: View {
                     .padding()
                 }
             }
-            .onAppear {viewModel.loadCards(forCardSetId: cardSetId)
-            }
+        }
+        .onAppear {
+            viewModel.loadCards(forCardSetId: cardSetId)
         }
     }
 }

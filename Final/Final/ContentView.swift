@@ -16,35 +16,93 @@ extension Color {
     }
 }
 
+//struct ContentView: View {
+//
+//    var body: some View {
+//        NavigationView {
+//            ZStack {
+//                Color(hex: "FFE5B4").edgesIgnoringSafeArea(.all)
+//
+//                List {
+//                    CustomNavigationLink(destination: HomeView()) {
+//                        Label("Home", systemImage: "house")
+//                    }
+//                    CustomNavigationLink(destination: CreateDeck()) {
+//                        Label("Create Deck", systemImage: "plus.rectangle.on.rectangle")
+//                    }
+//                    CustomNavigationLink(destination: PlayGame()) {
+//                        Label("Play Game", systemImage: "gamecontroller")
+//                    }
+//                    CustomNavigationLink(destination: CardSetsView()) {
+//                        Label("Card Decks", systemImage: "cards")
+//                    }
+//                    CustomNavigationLink(destination: ArchiveView()) {
+//                        Label("Archive", systemImage: "tray.full")
+//                    }
+//                }
+//                .listStyle(PlainListStyle())
+//                .listRowBackground(Color(hex: "FFE5B4"))
+//            }
+//        }
+//    }
+//}
+
 struct ContentView: View {
+    @State private var isLoading = true // Een staat om te controleren of het laden actief is
+
     var body: some View {
         NavigationView {
             ZStack {
-                Color(hex: "FFE5B4").edgesIgnoringSafeArea(.all)
+                if isLoading {
+                    LoadingView()
+                        .background(Color(hex: "FFE5B4"))
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .edgesIgnoringSafeArea(.all) // Hiermee wordt het laadscherm over het hele scherm geplaatst
+                }
                 
+                Color(hex: "FFE5B4").edgesIgnoringSafeArea(.all)
+
                 List {
                     CustomNavigationLink(destination: HomeView()) {
                         Label("Home", systemImage: "house")
                     }
                     CustomNavigationLink(destination: CreateDeck()) {
-                        Label("Create Deck", systemImage: "plus.rectangle.on.rectangle")
+                        Label("Set Aanmaken", systemImage: "plus.rectangle.on.rectangle")
                     }
-                    CustomNavigationLink(destination: Text("Play Game View")) {
-                        Label("Play Game", systemImage: "gamecontroller")
+                    CustomNavigationLink(destination: PlayGame()) {
+                        Label("Speel Spel", systemImage: "gamecontroller")
                     }
                     CustomNavigationLink(destination: CardSetsView()) {
-                        Label("Card Decks", systemImage: "cards")
+                        Label("Mijn Sets", systemImage: "rectangle.grid.1x2.fill")
                     }
-                    CustomNavigationLink(destination: Text("Archive View")) {
-                        Label("Archive", systemImage: "tray.full")
+                    CustomNavigationLink(destination: ArchiveView()) {
+                        Label("Archief", systemImage: "tray.full")
                     }
                 }
                 .listStyle(PlainListStyle())
                 .listRowBackground(Color(hex: "FFE5B4"))
+                
+
+            }
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                isLoading = false // Voorbeeld: schakel isLoading uit na 3 seconden 
             }
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 struct CustomNavigationLink<Destination: View, Label: View>: View {
     var destination: Destination
@@ -58,11 +116,11 @@ struct CustomNavigationLink<Destination: View, Label: View>: View {
     var body: some View {
         NavigationLink(destination: destination) {
             label()
-                .foregroundColor(.black) // Adjust as needed for contrast
+                .foregroundColor(.black)
         }
-        .accentColor(.gray) // Color when the link is active
+        .accentColor(.gray)
         .buttonStyle(PlainButtonStyle())
-        .listRowBackground(Color(hex: "FFE5B4")) // Set the list row background color to your hex color
+        .listRowBackground(Color(hex: "FFE5B4"))
     }
 }
 
@@ -70,6 +128,20 @@ struct HomeView: View {
     var body: some View {
         Text("Home Page")
             .navigationBarTitle("", displayMode: .large)
+        
+        
+        
+        
+        Image("Image")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 600, height: 600) 
+        
+        
+        
+        
+
+
     }
 }
 

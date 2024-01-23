@@ -30,6 +30,10 @@ class CreateDeckViewModel: ObservableObject {
     @Published var isPrivate: Bool = false
     @Published var cards: [Card] = []
     
+    //Cards
+    @Published var errorMessage: String? = nil
+    @Published var Message: String? = nil
+    
     //CreateDeck
     func createDeck() {
         DeckAPI.shared.createDeck(name: deckName, description: deckDescription) { [weak self] result in
@@ -63,15 +67,22 @@ class CreateDeckViewModel: ObservableObject {
     }
     
     func createCard() {
-        let newCardData = CardData(
-            themeId: selectedThemeId ?? 0,
-            cardSetId: generatedCardSetId ?? 0,
-            textQuestion: textQuestion,
-            logoUrl: logoUrl,
-            imageUrl: imageUrl,
-            isActive: isActive,
-            isPrivate: isPrivate
-        )
+        errorMessage = nil
+        Message = nil
+        // Hardcoded waarden - moet ingevuld zijn maar hebben geen functie in huidige API -_-
+           let hardcodedLogoUrl = "http://example.com/logo.jpg"
+           let hardcodedImageUrl = "http://example.com/image.jpg"
+           let hardcodedIsActive = true
+
+           let newCardData = CardData(
+               themeId: selectedThemeId ?? 0,
+               cardSetId: generatedCardSetId ?? 0,
+               textQuestion: textQuestion,
+               logoUrl: hardcodedLogoUrl, // Gebruik de hardcoded waarde
+               imageUrl: hardcodedImageUrl, // Gebruik de hardcoded waarde
+               isActive: hardcodedIsActive, // Gebruik de hardcoded waarde
+               isPrivate: isPrivate
+           )
         
         CardAPI.shared.createCard(cardData: newCardData) { [weak self] result in
             DispatchQueue.main.async {
@@ -79,8 +90,11 @@ class CreateDeckViewModel: ObservableObject {
                 case .success:
                     print("Kaart succesvol aangemaakt")
                     self?.loadCards()
+                    self?.textQuestion = "" // Reset textQuestion na succes
+                    self?.Message = "Kaart succesvol aangemaakt"
                 case .failure(let error):
                     print("Fout bij het aanmaken van de kaart: \(error)")
+                    self?.errorMessage = "Fout bij het aanmaken van de kaart: Kies een Thema"
                 }
             }
         }

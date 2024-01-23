@@ -10,8 +10,6 @@ import SwiftUI
 
 extension Color {
     func toHex() -> String {
-        // Voorbeeldimplementatie. Pas deze aan op basis van je behoeften
-        // en het kleurenmodel dat je app gebruikt.
         guard let components = cgColor?.components, components.count >= 3 else {
             return "#000000"
         }

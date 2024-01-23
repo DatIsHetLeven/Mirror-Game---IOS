@@ -60,7 +60,7 @@ class CardAPI {
                 return
             }
 
-            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 201 else {
                 completion(.failure(APIError.serverError))
                 return
             }
